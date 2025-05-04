@@ -34,9 +34,12 @@
     <div id="timer-container">
       <div id="timer-bar"></div>
     </div>
+    <div id="controls">
+      <button id="pauseBtn">Pause</button>
+      <button id="startOverBtn">Start Over</button>
+    </div>
     <div id="question"></div>
     <div id="choices"></div>
-    <button id="nextBtn">Next Question</button>
     <div id="score"></div>
   </div>
 
@@ -45,6 +48,14 @@
       <p id="popup-message"></p>
       <button id="popup-close-btn">OK</button>
     </div>
+  </div>
+
+  <div id="summary" class="hidden">
+    <h2>Game Over!</h2>
+    <p id="final-score"></p>
+    <h3>Leaderboard</h3>
+    <ul id="leaderboard"></ul>
+    <button id="playAgainBtn">Play Again</button>
   </div>
 
   <script src="script.js"></script>

@@ -125,3 +125,66 @@ button:hover {
 .hidden {
   display: none;
 }
+
+/* Controls container */
+#controls {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Pause and Start Over buttons */
+#pauseBtn, #startOverBtn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#pauseBtn:hover, #startOverBtn:hover {
+  background-color: #0056b3;
+}
+
+/* Summary page styles */
+#summary {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Leaderboard styles */
+#leaderboard {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+#leaderboard li {
+  margin: 5px 0;
+  padding: 10px;
+  background-color: #007bff; /* Blue background for visibility */
+  color: white; /* White text for contrast */
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#leaderboard li:nth-child(odd) {
+  background-color: #0056b3; /* Slightly darker blue for alternating rows */
+}
+
+#playAgainBtn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #28a745; /* Green button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#playAgainBtn:hover {
+  background-color: #218838; /* Darker green on hover */
+}

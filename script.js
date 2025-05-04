@@ -2,21 +2,59 @@ let questions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let timerInterval;
+let isPaused = false;
 
 async function loadQuestions() {
   try {
     const response = await fetch('trivia_questions.json');
     questions = await response.json();
+    shuffleQuestions(); // Shuffle questions to randomize order
     startQuiz();
   } catch (error) {
     console.error('Error loading questions:', error);
   }
 }
 
+// Function to shuffle the questions array
+function shuffleQuestions() {
+  for (let i = questions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [questions[i], questions[j]] = [questions[j], questions[i]];
+  }
+}
+
 function startQuiz() {
   document.getElementById('config').classList.add('hidden'); // Hide config
+  document.getElementById('controls').classList.remove('hidden'); // Show controls
+  score = 0;
+  currentQuestionIndex = 0;
   document.getElementById('score').textContent = `Score: ${score}`;
   showQuestion();
+}
+
+function pauseQuiz() {
+  if (isPaused) {
+    isPaused = false;
+    document.getElementById('pauseBtn').textContent = 'Pause';
+    startTimer(); // Resume the timer
+  } else {
+    isPaused = true;
+    document.getElementById('pauseBtn').textContent = 'Resume';
+    clearInterval(timerInterval); // Stop the timer
+  }
+}
+
+function startOverQuiz() {
+  clearInterval(timerInterval);
+  isPaused = false;
+  document.getElementById('pauseBtn').textContent = 'Pause';
+  document.getElementById('config').classList.remove('hidden'); // Show config
+  document.getElementById('controls').classList.add('hidden'); // Hide controls
+  document.getElementById('question').textContent = '';
+  document.getElementById('choices').innerHTML = '';
+  document.getElementById('timer').textContent = 'Time Left: 15s';
+  document.getElementById('timer-bar').style.width = '100%';
+  document.getElementById('score').textContent = '';
 }
 
 function showQuestion() {
@@ -79,6 +117,8 @@ function startTimer() {
   timerBar.style.width = '100%'; // Reset progress bar
 
   timerInterval = setInterval(() => {
+    if (isPaused) return; // Skip timer updates if paused
+
     timeLeft--;
     timerElement.textContent = `Time Left: ${timeLeft}s`;
     timerBar.style.width = `${(timeLeft / 15) * 100}%`; // Update progress bar width
@@ -92,15 +132,60 @@ function startTimer() {
 
 function endQuiz() {
   clearInterval(timerInterval);
-  document.getElementById('config').classList.remove('hidden'); // Show config again
-  const questionElement = document.getElementById('question');
-  const choicesElement = document.getElementById('choices');
-  const timerElement = document.getElementById('timer');
 
-  questionElement.textContent = 'Quiz Over!';
-  choicesElement.innerHTML = '';
-  timerElement.textContent = '';
-  document.getElementById('score').textContent = `Final Score: ${score}`;
+  // Hide the game elements
+  document.getElementById('config').classList.remove('hidden'); // Show config again
+  document.getElementById('controls').classList.add('hidden'); // Hide controls
+  document.getElementById('question').classList.add('hidden');
+  document.getElementById('choices').classList.add('hidden');
+  document.getElementById('timer').classList.add('hidden');
+  document.getElementById('timer-container').classList.add('hidden');
+
+  // Show the summary page
+  document.getElementById('summary').classList.remove('hidden');
+
+  // Display the final score as "X out of Y"
+  const totalQuestions = questions.length;
+  document.getElementById('final-score').textContent = `Your Final Score: ${score} out of ${totalQuestions}`;
+
+  // Update the leaderboard
+  updateLeaderboard(score, totalQuestions);
+}
+
+function updateLeaderboard(score, totalQuestions) {
+  // Get the leaderboard from localStorage or initialize it
+  const leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
+
+  // Add the current score to the leaderboard
+  const playerName = prompt('Enter your name for the leaderboard:') || 'Anonymous';
+  leaderboard.push({ name: playerName, score, totalQuestions });
+
+  // Sort the leaderboard by score in descending order
+  leaderboard.sort((a, b) => b.score - a.score);
+
+  // Save the updated leaderboard to localStorage
+  localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
+
+  // Display the leaderboard
+  const leaderboardElement = document.getElementById('leaderboard');
+  leaderboardElement.innerHTML = '';
+  leaderboard.forEach((entry, index) => {
+    const listItem = document.createElement('li');
+    listItem.textContent = `${index + 1}. ${entry.name} - ${entry.score} out of ${entry.totalQuestions}`;
+    leaderboardElement.appendChild(listItem);
+  });
 }
 
 document.getElementById('startBtn').addEventListener('click', loadQuestions);
+document.getElementById('pauseBtn').addEventListener('click', pauseQuiz);
+document.getElementById('startOverBtn').addEventListener('click', startOverQuiz);
+document.getElementById('playAgainBtn').addEventListener('click', () => {
+  // Reset the game and start over
+  document.getElementById('summary').classList.add('hidden'); // Hide summary
+  document.getElementById('config').classList.remove('hidden'); // Show config
+  document.getElementById('question').classList.remove('hidden');
+  document.getElementById('choices').classList.remove('hidden');
+  document.getElementById('timer').classList.remove('hidden');
+  document.getElementById('timer-container').classList.remove('hidden');
+  startOverQuiz();
+});
