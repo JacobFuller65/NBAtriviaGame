@@ -4,7 +4,7 @@ import json
 def load_data(file_path):
     """Load data from a JSON file."""
     try:
-        with open(file_path, 'r') as file:
+        with open(file_path, 'r', encoding='utf-8') as file:  # Specify UTF-8 encoding
             return json.load(file)
     except FileNotFoundError:
         print(f"Error: File not found at {file_path}")
@@ -16,8 +16,8 @@ def load_data(file_path):
 def generate_dynamic_questions():
     """Dynamically generate NBA trivia questions."""
     # Load players and teams from JSON files
-    players = load_data("Data\modernNbaPlayers.json")
-    teams = load_data("Data\modernNbaTeams.json")
+    players = load_data(r"Data/modernNbaPlayers.json")  # Use raw string or forward slashes
+    teams = load_data(r"Data/modernNbaTeams.json")
     
     records = [
         "most points scored in a single NBA game",
@@ -62,6 +62,19 @@ def get_random_question(questions):
         return None
     return random.choice(questions)
 
+def export_question_to_file(question, file_path):
+    """Export the question and its choices to a file."""
+    try:
+        with open(file_path, 'w', encoding='utf-8') as file:
+            file.write(f"Q: {question['question']}\n")
+            file.write("Choices:\n")
+            for idx, choice in enumerate(question['choices'], start=1):
+                file.write(f"{idx}. {choice}\n")
+            file.write(f"Correct Answer: {question['correct_answer']}\n")
+        print(f"Question exported to {file_path}")
+    except Exception as e:
+        print(f"Error exporting question to file: {e}")
+
 def main():
     # Generate dynamic questions
     questions = generate_dynamic_questions()
@@ -75,6 +88,9 @@ def main():
         print("Choices:")
         for idx, choice in enumerate(question['choices'], start=1):
             print(f"{idx}. {choice}")
+        
+        # Export the question to a file
+        export_question_to_file(question, "c:\\Users\\Union\\NBA Trivia Game\\NBAtriviaGame\\Data\\output_question.txt")
 
 if __name__ == "__main__":
     main()
