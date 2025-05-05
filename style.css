@@ -7,7 +7,6 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  padding: 0; /* Remove any default padding */
 }
 
 .game-container {
@@ -15,124 +14,125 @@ body {
   padding: 2rem;
   border-radius: 10px;
   text-align: center;
-  max-width: 90%; /* Increase max width to use more screen space */
-  width: 100%; /* Ensure it stretches to fit the screen */
-  height: auto; /* Allow dynamic height adjustment */
-  box-sizing: border-box; /* Include padding in width/height calculations */
+  max-width: 600px;
+  width: 90%;
 }
 
 #config {
   margin-bottom: 1rem;
 }
 
+
 select, button {
-  margin: 0.5rem; font-size: 1rem;
-  padding: 0.5rem;}
+  margin: 0.5rem;
+  padding: 0.5rem;
   font-size: 1rem;
 }
-1f78b4; /* Darker blue for better contrast */
+
 button {
-  background: #1f78b4; /* Darker blue for better contrast */White text for high contrast */
-  border: none;px;
-  color: #ffffff; /* White text for high contrast */ cursor: pointer;
-  border-radius: 5px;}
+  background: #1f78b4; /* Darker blue for better contrast */
+  border: none;
+  color: #ffffff; /* White text for high contrast */
+  border-radius: 5px;
   cursor: pointer;
 }
 
-button:hover { color: #f0f0f0; /* Slightly off-white text for better readability */
-  background: #145a86; /* Even darker blue for hover state */}
+button:hover {
+  background: #145a86; /* Even darker blue for hover state */
   color: #f0f0f0; /* Slightly off-white text for better readability */
 }
 
-#timer { margin-bottom: 1rem;
-  font-size: 1.5rem; /* Slightly larger for better visibility */}
+#timer {
+  font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
-#question { margin-bottom: 1rem;
-  font-size: 1.6rem; /* Larger font for better readability */}
+#question {
+  font-size: 1.4rem;
   margin-bottom: 1rem;
 }
 
-#choices button {rem auto;
-  display: block; width: 80%;
-  margin: 0.5rem auto;}
-  width: 90%; /* Increase button width for better usability */
-}bar container */
-er {
+#choices button {
+  display: block;
+  margin: 0.5rem auto;
+  width: 80%;
+}
+
 /* Timer progress bar container */
 #timer-container {
-  width: 100%;e0e0e0;
-  height: 15px; /* Slightly taller for better visibility */x;
+  width: 100%;
+  height: 10px;
   background-color: #e0e0e0;
-  border-radius: 5px; overflow: hidden;
-  margin-top: 10px;}
+  border-radius: 5px;
+  margin-top: 10px;
   overflow: hidden;
-}gress bar */
+}
 
 /* Timer progress bar */
 #timer-bar {
   width: 100%;
-  height: 100%; transition: width 0.1s linear;
-  background-color: #007bff;}
+  height: 100%;
+  background-color: #007bff;
   transition: width 0.1s linear;
-} styles */
+}
 
-/* Popup styles */n: fixed;
+/* Popup styles */
 .popup {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;ba(0, 0, 0, 0.5); /* Semi-transparent background */
+  width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */ter;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
   display: flex;
-  justify-content: center; z-index: 1000; /* Ensure it appears above other elements */
-  align-items: center;}
+  justify-content: center;
+  align-items: center;
   z-index: 1000; /* Ensure it appears above other elements */
 }
- display: none;
-.popup.hidden {}
+
+.popup.hidden {
   display: none;
 }
-ontrast */
-.popup-content {/* Set text color to black for visibility */
+
+.popup-content {
   background: white; /* Ensure the background is white for contrast */
   color: black; /* Set text color to black for visibility */
-  padding: 30px; /* Add more padding for better spacing */
+  padding: 20px;
   border-radius: 8px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); word-wrap: break-word; /* Handle long text gracefully */
-  max-width: 90%; /* Ensure it uses more screen space on smaller devices */}
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 80%; /* Ensure it fits smaller screens */
   word-wrap: break-word; /* Handle long text gracefully */
 }
-Adjust font size for readability */
-#popup-message { margin-bottom: 15px;
-  font-size: 18px; /* Adjust font size for readability */}
+
+#popup-message {
+  font-size: 18px; /* Adjust font size for readability */
   margin-bottom: 15px;
 }
 
 #popup-close-btn {
-  margin-top: 10px;78b4; /* Updated blue for consistency */
-  padding: 10px 20px;f;
+  margin-top: 10px;
+  padding: 10px 20px;
   background: #1f78b4; /* Updated blue for consistency */
-  color: #ffffff;px;
-  border: none; cursor: pointer;
-  border-radius: 5px;}
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
-5a86; /* Updated hover color */
-#popup-close-btn:hover { color: #f0f0f0;
-  background: #145a86; /* Updated hover color */}
+
+#popup-close-btn:hover {
+  background: #145a86; /* Updated hover color */
   color: #f0f0f0;
 }
- display: none;
-.hidden {}
-  display: none;
-} container */
 
-/* Controls container */px;
+.hidden {
+  display: none;
+}
+
+/* Controls container */
 #controls {
+  margin-top: 10px;
+  display: flex;
   justify-content: center;
   gap: 10px;
 }
