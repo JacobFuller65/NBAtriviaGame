@@ -22,6 +22,7 @@ body {
   margin-bottom: 1rem;
 }
 
+
 select, button {
   margin: 0.5rem;
   padding: 0.5rem;
@@ -29,15 +30,16 @@ select, button {
 }
 
 button {
-  background: #45a29e;
+  background: #1f78b4; /* Darker blue for better contrast */
   border: none;
-  color: white;
+  color: #ffffff; /* White text for high contrast */
   border-radius: 5px;
   cursor: pointer;
 }
 
 button:hover {
-  background: #66fcf1;
+  background: #145a86; /* Even darker blue for hover state */
+  color: #f0f0f0; /* Slightly off-white text for better readability */
 }
 
 #timer {
@@ -111,15 +113,16 @@ button:hover {
 #popup-close-btn {
   margin-top: 10px;
   padding: 10px 20px;
-  background: #007bff; /* Blue button */
-  color: white; /* White text for contrast */
+  background: #1f78b4; /* Updated blue for consistency */
+  color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 #popup-close-btn:hover {
-  background: #0056b3; /* Darker blue on hover */
+  background: #145a86; /* Updated hover color */
+  color: #f0f0f0;
 }
 
 .hidden {
@@ -137,15 +140,16 @@ button:hover {
 /* Pause and Start Over buttons */
 #pauseBtn, #startOverBtn {
   padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
+  background-color: #1f78b4; /* Updated blue */
+  color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 #pauseBtn:hover, #startOverBtn:hover {
-  background-color: #0056b3;
+  background-color: #145a86; /* Updated hover color */
+  color: #f0f0f0;
 }
 
 /* Summary page styles */
@@ -178,13 +182,14 @@ button:hover {
 #playAgainBtn {
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #28a745; /* Green button */
-  color: white;
+  background-color: #28a745; /* Green button remains */
+  color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 #playAgainBtn:hover {
-  background-color: #218838; /* Darker green on hover */
+  background-color: #1e7e34; /* Darker green for hover */
+  color: #f0f0f0;
 }
