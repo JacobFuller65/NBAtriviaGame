@@ -6,7 +6,7 @@ let isPaused = false;
 
 async function loadQuestions() {
   try {
-    const response = await fetch('trivia_questions.json');
+    const response = await fetch('Data/trivia_questions.json'); // Updated path to the Data folder
     questions = await response.json();
     shuffleQuestions(); // Shuffle questions to randomize order
     startQuiz();
