@@ -1,4 +1,5 @@
-let questions = [];
+let allQuestions = []; // Store all questions from the JSON file
+let questions = []; // Store filtered questions for the current game
 let currentQuestionIndex = 0;
 let score = 0;
 let timerInterval;
@@ -6,13 +7,27 @@ let isPaused = false;
 
 async function loadQuestions() {
   try {
-    const response = await fetch('Data/trivia_questions.json'); // Updated path to the Data folder
-    questions = await response.json();
-    shuffleQuestions(); // Shuffle questions to randomize order
+    const response = await fetch('Data/ModernMediumquestions.json'); // Path to your JSON file
+    allQuestions = await response.json(); // Load all questions
+    filterQuestions(); // Filter questions based on difficulty and era
+    shuffleQuestions(); // Shuffle the filtered questions
     startQuiz();
   } catch (error) {
     console.error('Error loading questions:', error);
   }
+}
+
+// Function to filter questions based on selected difficulty and era
+function filterQuestions() {
+  const difficulty = document.getElementById('difficultySelect').value; // Get selected difficulty
+  const era = document.getElementById('eraSelect').value; // Get selected era
+
+  questions = allQuestions.filter((question) => {
+    // Filter logic: Adjust this if your JSON includes difficulty/era fields
+    const matchesDifficulty = difficulty === 'all' || question.difficulty === difficulty;
+    const matchesEra = era === 'all' || question.era === era;
+    return matchesDifficulty && matchesEra;
+  });
 }
 
 // Function to shuffle the questions array
@@ -97,7 +112,15 @@ function showPopup(message, isCorrect) {
   const popupMessage = document.getElementById('popup-message');
   const popupCloseBtn = document.getElementById('popup-close-btn');
 
-  popupMessage.textContent = message;
+  // Get the additional info for the current question
+  const additionalInfo = questions[currentQuestionIndex]?.["additional info"] || "";
+
+  // Update the popup message to include the additional info
+  popupMessage.innerHTML = `
+    <p>${message}</p>
+    <p><strong>Did you know?</strong> ${additionalInfo}</p>
+  `;
+
   popup.classList.remove('hidden');
 
   popupCloseBtn.onclick = () => {
