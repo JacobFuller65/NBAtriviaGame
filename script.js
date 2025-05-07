@@ -7,7 +7,7 @@ let isPaused = false;
 
 async function loadQuestions() {
   try {
-    const response = await fetch('Data/ModernMediumquestions.json'); // Path to your JSON file
+    const response = await fetch('Data/AllQuestions.json'); // Path to your JSON file
     allQuestions = await response.json(); // Load all questions
     filterQuestions(); // Filter questions based on difficulty and era
     shuffleQuestions(); // Shuffle the filtered questions
@@ -19,15 +19,28 @@ async function loadQuestions() {
 
 // Function to filter questions based on selected difficulty and era
 function filterQuestions() {
-  const difficulty = document.getElementById('difficultySelect').value; // Get selected difficulty
-  const era = document.getElementById('eraSelect').value; // Get selected era
+  const difficulty = document.getElementById('difficultySelect').value.toLowerCase(); // Get selected difficulty
+  const era = document.getElementById('eraSelect').value.toLowerCase(); // Get selected era
 
+  console.log("Selected Difficulty:", difficulty);
+  console.log("Selected Era:", era);
+
+  // Filter questions based on difficulty and era
   questions = allQuestions.filter((question) => {
-    // Filter logic: Adjust this if your JSON includes difficulty/era fields
-    const matchesDifficulty = difficulty === 'all' || question.difficulty === difficulty;
-    const matchesEra = era === 'all' || question.era === era;
+    const matchesDifficulty = difficulty === 'all' || question.difficulty.toLowerCase() === difficulty;
+    const matchesEra = era === 'all' || question.era.toLowerCase() === era || (era === 'all time' && question.era.toLowerCase() === 'all');
     return matchesDifficulty && matchesEra;
   });
+
+  // Debug: Log the filtered questions
+  console.log("Filtered Questions:", questions);
+
+  // Check if any questions match the criteria
+  if (questions.length === 0) {
+    alert("No questions match the selected criteria. Please adjust your settings.");
+    document.getElementById('config').classList.remove('hidden'); // Show config again
+    document.getElementById('controls').classList.add('hidden'); // Hide controls
+  }
 }
 
 // Function to shuffle the questions array
@@ -39,6 +52,11 @@ function shuffleQuestions() {
 }
 
 function startQuiz() {
+  if (questions.length === 0) {
+    alert("No questions available for the selected criteria. Please try again.");
+    return;
+  }
+
   document.getElementById('config').classList.add('hidden'); // Hide config
   document.getElementById('controls').classList.remove('hidden'); // Show controls
   score = 0;
@@ -97,7 +115,8 @@ function showQuestion() {
 }
 
 function checkAnswer(selectedChoice) {
-  const correctAnswer = questions[currentQuestionIndex].correct_answer;
+  const correctAnswer = questions[currentQuestionIndex]?.answer; // Ensure "answer" matches the JSON key
+
   if (selectedChoice === correctAnswer) {
     score++;
     document.getElementById('score').textContent = `Score: ${score}`;
@@ -113,7 +132,7 @@ function showPopup(message, isCorrect) {
   const popupCloseBtn = document.getElementById('popup-close-btn');
 
   // Get the additional info for the current question
-  const additionalInfo = questions[currentQuestionIndex]?.["additional info"] || "";
+  const additionalInfo = questions[currentQuestionIndex]?.["additional info"] || "No additional information available.";
 
   // Update the popup message to include the additional info
   popupMessage.innerHTML = `
