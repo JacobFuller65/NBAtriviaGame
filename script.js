@@ -4,7 +4,7 @@ let currentQuestionIndex = 0;
 let score = 0;
 let timerInterval;
 let isPaused = false;
-
+// Function to load questions from the JSON file
 async function loadQuestions() {
   try {
     const response = await fetch('Data/AllQuestions.json'); // Path to your JSON file
@@ -16,12 +16,10 @@ async function loadQuestions() {
     console.error('Error loading questions:', error);
   }
 }
-
 // Function to filter questions based on selected difficulty and era
 function filterQuestions() {
   const difficulty = document.getElementById('difficultySelect').value.toLowerCase(); // Get selected difficulty
   const era = document.getElementById('eraSelect').value.toLowerCase(); // Get selected era
-
   console.log("Selected Difficulty:", difficulty);
   console.log("Selected Era:", era);
 
@@ -76,7 +74,7 @@ function pauseQuiz() {
     clearInterval(timerInterval); // Stop the timer
   }
 }
-
+//restart the quiz and reset everything
 function startOverQuiz() {
   clearInterval(timerInterval);
   isPaused = false;
@@ -89,20 +87,19 @@ function startOverQuiz() {
   document.getElementById('timer-bar').style.width = '100%';
   document.getElementById('score').textContent = '';
 }
-
+// Function to show the current question and choices
 function showQuestion() {
   if (currentQuestionIndex >= questions.length) {
     endQuiz();
     return;
   }
-
+  // Show the current question and choices
   const questionData = questions[currentQuestionIndex];
   const questionElement = document.getElementById('question');
   const choicesElement = document.getElementById('choices');
-
   questionElement.textContent = questionData.question;
   choicesElement.innerHTML = '';
-
+  //create buttons for each choice
   questionData.choices.forEach((choice) => {
     const button = document.createElement('button');
     button.textContent = choice;
@@ -110,10 +107,10 @@ function showQuestion() {
     button.addEventListener('click', () => checkAnswer(choice));
     choicesElement.appendChild(button);
   });
-
+  // Show the timer and start it
   startTimer();
 }
-
+// Function to check the selected answer and show if it's correct or wrong
 function checkAnswer(selectedChoice) {
   const correctAnswer = questions[currentQuestionIndex]?.answer; // Ensure "answer" matches the JSON key
 
@@ -139,28 +136,27 @@ function showPopup(message, isCorrect) {
     <p>${message}</p>
     <p><strong>Did you know?</strong> ${additionalInfo}</p>
   `;
-
   popup.classList.remove('hidden');
-
   popupCloseBtn.onclick = () => {
     popup.classList.add('hidden');
     currentQuestionIndex++;
-    showQuestion(); // Move to the next question
+    // Move to the next question
+    showQuestion(); 
   };
 }
-
+// Function to start the timer
 function startTimer() {
   let timeLeft = 15;
   const timerElement = document.getElementById('timer');
   const timerBar = document.getElementById('timer-bar');
   timerElement.textContent = `Time Left: ${timeLeft}s`;
-
+  //start / restart the timer
   clearInterval(timerInterval);
-  timerBar.style.width = '100%'; // Reset progress bar
+  timerBar.style.width = '100%'; 
 
+  // Function to update the timer every second
   timerInterval = setInterval(() => {
     if (isPaused) return; // Skip timer updates if paused
-
     timeLeft--;
     timerElement.textContent = `Time Left: ${timeLeft}s`;
     timerBar.style.width = `${(timeLeft / 15) * 100}%`; // Update progress bar width
@@ -171,7 +167,7 @@ function startTimer() {
     }
   }, 1000);
 }
-
+// Function to end the quiz and show the summary
 function endQuiz() {
   clearInterval(timerInterval);
 
@@ -217,7 +213,7 @@ function updateLeaderboard(score, totalQuestions) {
     leaderboardElement.appendChild(listItem);
   });
 }
-
+// Event listeners for buttons
 document.getElementById('startBtn').addEventListener('click', loadQuestions);
 document.getElementById('pauseBtn').addEventListener('click', pauseQuiz);
 document.getElementById('startOverBtn').addEventListener('click', startOverQuiz);
