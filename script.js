@@ -7,7 +7,7 @@ let isPaused = false;
 // Function to load questions from the JSON file
 async function loadQuestions() {
   try {
-    const response = await fetch("Data/AllQuestions.json"); // Path to your JSON file
+    const response = await fetch("Data/SortedQuestions/AllQuestions.json"); // Updated path to the JSON file
     allQuestions = await response.json(); // Load all questions
     filterQuestions(); // Filter questions based on difficulty and era
     shuffleQuestions(); // Shuffle the filtered questions
