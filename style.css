@@ -131,10 +131,11 @@ button:hover {
 
 /* Controls container */
 #controls {
-  margin-top: 10px;
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  flex-direction: column; /* Stack buttons vertically */
+  align-items: center; /* Center align the buttons */
+  gap: 10px; /* Add spacing between buttons */
+  margin-top: 10px;
 }
 
 /* Pause and Start Over buttons */
@@ -192,6 +193,31 @@ button:hover {
 #playAgainBtn:hover {
   background-color: #1e7e34; /* Darker green for hover */
   color: #f0f0f0;
+}
+
+/* Contact section */
+#contact {
+  position: fixed; /* Fix the position relative to the viewport */
+  bottom: 20px; /* Distance from the bottom of the screen */
+  right: 20px; /* Distance from the right of the screen */
+  z-index: 1000; /* Ensure it stays above other elements */
+  text-align: center;
+  margin-top: 10px; /* Adjust spacing between the controls and the contact button */
+}
+
+#contactBtn {
+  background-color: #1f78b4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
+}
+
+#contactBtn:hover {
+  background-color: #145a86;
 }
 
 /* Responsive styles for tablets and smaller devices */
