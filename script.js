@@ -131,13 +131,15 @@ function showPopup(message, isCorrect) {
   const popupMessage = document.getElementById('popup-message');
   const popupCloseBtn = document.getElementById('popup-close-btn');
 
-  // Get the additional info for the current question
+  // Get the additional info and image for the current question
   const additionalInfo = questions[currentQuestionIndex]?.["additional info"] || "No additional information available.";
+  const imageUrl = questions[currentQuestionIndex]?.image || "";
 
-  // Update the popup message to include the additional info
+  // Update the popup message to include the additional info and image
   popupMessage.innerHTML = `
     <p>${message}</p>
     <p><strong>Did you know?</strong> ${additionalInfo}</p>
+    ${imageUrl ? `<img src="${imageUrl}" alt="Correct Answer Image" style="max-width: 100%; height: auto; margin-top: 10px;">` : ""}
   `;
 
   popup.classList.remove('hidden');
