@@ -18,5 +18,5 @@ This project is an interactive trivia game focused on NBA history, players, and 
 
 ## Future Enhancements
 - Add more questions and categories.
-- Implement multiplayer mode.
-- Integrate leaderboards for competitive play.
+- Save leaderboards to compare against others who take quizzes
+
