@@ -26,6 +26,7 @@ function filterQuestions() {
     .getElementById("difficultySelect")
     .value.toLowerCase(); // Get selected difficulty
   const era = document.getElementById("eraSelect").value.toLowerCase(); // Get selected era
+
   console.log("Selected Difficulty:", difficulty);
   console.log("Selected Era:", era);
 
@@ -34,9 +35,9 @@ function filterQuestions() {
     const matchesDifficulty =
       difficulty === "all" || question.difficulty.toLowerCase() === difficulty;
     const matchesEra =
-      era === "all" ||
-      question.era.toLowerCase() === era ||
-      (era === "all time" && question.era.toLowerCase() === "all");
+      era === "all" || question.era.toLowerCase() === era;
+
+    // Include all questions if both filters are set to "all"
     return matchesDifficulty && matchesEra;
   });
 
