@@ -36,6 +36,9 @@
       <div id="controls">
         <button id="pauseBtn">Pause</button>
         <button id="startOverBtn">Start Over</button>
+        <div id="contact">
+          <button id="contactBtn">Contact/Feedback</button>
+        </div>
       </div>
       <div id="question"></div>
       <div id="choices"></div>
@@ -58,5 +61,12 @@
     </div>
 
     <script src="script.js"></script>
+
+    <script>
+      // Add functionality to the Contact/Feedback button
+      document.getElementById("contactBtn").addEventListener("click", () => {
+        window.location.href = "mailto:Jake.Fuller64@gmail.com?subject=NBA Trivia Feedback&body=Hi, I have some feedback about the NBA Trivia Game.";
+      });
+    </script>
   </body>
 </html>
