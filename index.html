@@ -1,61 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NBA Trivia Game</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="game-container">
-    <h1>🏀 NBA Trivia</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NBA Trivia Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-    <div id="config">
-      <label>Difficulty:</label>
-      <select id="difficultySelect">
-        <option value="easy">Easy</option>
-        <option value="medium" selected>Medium</option>
-        <option value="hard">Hard</option>
-      </select>
+  <body>
+    <div class="game-container">
+      <h1>🏀 NBA Trivia</h1>
 
-      <label>Era:</label>
-      <select id="eraSelect">
-        <option value="all">All</option>
-        <option value="modern">Modern (Present)</option>
-        <option value="all time">All Time</option>
-      </select>
+      <div id="config">
+        <label>Difficulty:</label>
+        <select id="difficultySelect" title="Select Difficulty">
+          <option value="easy">Easy</option>
+          <option value="medium" selected>Medium</option>
+          <option value="hard">Hard</option>
+        </select>
 
-      <button id="startBtn">Start Game</button>
+        <label>Era:</label>
+        <select id="eraSelect" title="Select Era">
+          <option value="all">All</option>
+          <option value="modern">Modern (Present)</option>
+          <option value="all time">All Time</option>
+        </select>
+
+        <button id="startBtn">Start Game</button>
+      </div>
+
+      <div id="timer">Time Left: 15s</div>
+      <div id="timer-container">
+        <div id="timer-bar"></div>
+      </div>
+      <div id="controls">
+        <button id="pauseBtn">Pause</button>
+        <button id="startOverBtn">Start Over</button>
+      </div>
+      <div id="question"></div>
+      <div id="choices"></div>
+      <div id="score"></div>
     </div>
 
-    <div id="timer">Time Left: 15s</div>
-    <div id="timer-container">
-      <div id="timer-bar"></div>
+    <div id="popup" class="popup hidden">
+      <div class="popup-content">
+        <p id="popup-message"></p>
+        <button id="popup-close-btn">OK</button>
+      </div>
     </div>
-    <div id="controls">
-      <button id="pauseBtn">Pause</button>
-      <button id="startOverBtn">Start Over</button>
+
+    <div id="summary" class="hidden">
+      <h2>Game Over!</h2>
+      <p id="final-score"></p>
+      <h3>Leaderboard</h3>
+      <ul id="leaderboard"></ul>
+      <button id="playAgainBtn">Play Again</button>
     </div>
-    <div id="question"></div>
-    <div id="choices"></div>
-    <div id="score"></div>
-  </div>
 
-  <div id="popup" class="popup hidden">
-    <div class="popup-content">
-      <p id="popup-message"></p>
-      <button id="popup-close-btn">OK</button>
-    </div>
-  </div>
-
-  <div id="summary" class="hidden">
-    <h2>Game Over!</h2>
-    <p id="final-score"></p>
-    <h3>Leaderboard</h3>
-    <ul id="leaderboard"></ul>
-    <button id="playAgainBtn">Play Again</button>
-  </div>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

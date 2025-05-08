@@ -1,0 +1,7 @@
+flask==2.3.2
+flask-sqlalchemy==3.0.5
+flask-wtf==1.1.1
+sqlalchemy==2.0.21
+wtforms==3.0.1
+requests==2.31.0
+python-dotenv==1.0.0
