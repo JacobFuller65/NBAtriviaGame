@@ -7,7 +7,7 @@ let isPaused = false;
 // Function to load questions from the JSON file
 async function loadQuestions() {
   try {
-    const response = await fetch("Data/SortedQuestions/AllQuestions.json"); // Updated path to the JSON file
+    const response = await fetch("Questions\AllQuestions.json"); // Updated path to the JSON file
     if (!response.ok) {
       throw new Error(`Failed to fetch questions: ${response.statusText}`);
     }
