@@ -8,12 +8,16 @@ let isPaused = false;
 async function loadQuestions() {
   try {
     const response = await fetch("Data/SortedQuestions/AllQuestions.json"); // Updated path to the JSON file
+    if (!response.ok) {
+      throw new Error(`Failed to fetch questions: ${response.statusText}`);
+    }
     allQuestions = await response.json(); // Load all questions
     filterQuestions(); // Filter questions based on difficulty and era
     shuffleQuestions(); // Shuffle the filtered questions
     startQuiz();
   } catch (error) {
     console.error("Error loading questions:", error);
+    alert("Failed to load questions. Please check your file structure.");
   }
 }
 // Function to filter questions based on selected difficulty and era
@@ -109,7 +113,8 @@ function showQuestion() {
   const choicesElement = document.getElementById("choices");
   questionElement.textContent = questionData.question;
   choicesElement.innerHTML = "";
-  //create buttons for each choice
+
+  // Create buttons for each choice
   questionData.choices.forEach((choice) => {
     const button = document.createElement("button");
     button.textContent = choice;
@@ -117,6 +122,7 @@ function showQuestion() {
     button.addEventListener("click", () => checkAnswer(choice));
     choicesElement.appendChild(button);
   });
+
   // Show the timer and start it
   startTimer();
 }
@@ -140,7 +146,9 @@ function showPopup(message, isCorrect) {
 
   // Get the additional info and image for the current question
   const additionalInfo = questions[currentQuestionIndex]?.["additional info"] || "No additional information available.";
-  const imageUrl = questions[currentQuestionIndex]?.image || "";
+  const imageUrl = questions[currentQuestionIndex]?.image
+    ? `Images/${questions[currentQuestionIndex].image}` // Updated path to the image
+    : "";
 
   // Update the popup message to include the additional info and image
   popupMessage.innerHTML = `
