@@ -10,7 +10,8 @@
     ],
     "additional info": "Shai Gilgeous-Alexander is currently leading the league in points per game.",
     "difficulty": "Medium",
-    "era": "Modern"
+    "era": "Modern",
+    "image": "Images/Shai Gilgeous-Alexander.jpg"
   },
   {
     "question": "Who is the current leader in REB per game?",
@@ -23,7 +24,8 @@
     ],
     "additional info": "Domantas Sabonis is currently leading the league in rebounds per game.",
     "difficulty": "Medium",
-    "era": "Modern"
+    "era": "Modern",
+    "image": "Images/Domantas Sabonis.jpg"
   },
   {
     "question": "Who is the current leader in AST per game?",
@@ -36,7 +38,8 @@
     ],
     "additional info": "Trae Young is currently leading the league in assists per game.",
     "difficulty": "Medium",
-    "era": "Modern"
+    "era": "Modern",
+    "image": "Images/Trae Young.jpg"
   },
   {
     "question": "Which NBA player has won the most MVP awards?",
@@ -49,7 +52,8 @@
     ],
     "additional info": "Kareem Abdul-Jabbar won 6 MVP awards during his career, the most in NBA history.",
     "difficulty": "Medium",
-    "era": "All Time"
+    "era": "All Time",
+    "image": "./Images/Kareem Abdul-Jabbar.jpg"
   },
   {
     "question": "Who was the first player to be drafted straight out of high school?",
@@ -62,7 +66,8 @@
     ],
     "additional info": "Moses Malone was drafted in the 1974 ABA Draft.",
     "difficulty": "Hard",
-    "era": "All Time"
+    "era": "All Time",
+    "image": "./Images/Moses Malone.jpg"
   },
   {
     "question": "Which team holds the record for the most wins in a single regular season?",
@@ -75,7 +80,8 @@
     ],
     "additional info": "The Golden State Warriors achieved 73 wins in the 2015-2016 season.",
     "difficulty": "Medium",
-    "era": "All Time"
+    "era": "All Time",
+    "image": "./Images/73 Win Warriors.jpg"
   },
   {
     "question": "Who is the all-time leading scorer in NBA history?",
@@ -88,7 +94,8 @@
     ],
     "additional info": "LeBron James has scored over 40,474 points in his career.",
     "difficulty": "Medium",
-    "era": "All Time" 
+    "era": "All Time",
+    "image": "./Images/LeBron All Time Scoring Graphic.png"
   },
   {
     "question": "Which player scored 100 points in a single NBA game?",
@@ -101,7 +108,8 @@
     ],
     "additional info": "Wilt Chamberlain scored 100 points on March 2, 1962.",
     "difficulty": "Medium",
-    "era": "All Time"
+    "era": "All Time",
+    "image": "./Images/Wilt Chamberlain 100 Point Game.jpg"
   },
   {
     "question": "What is the name of the NBA trophy awarded to the champions?",
@@ -114,7 +122,8 @@
     ],
     "additional info": "The Larry O’Brien Championship Trophy is awarded to the NBA champions.",
     "difficulty": "Medium",
-    "era": "All Time"
+    "era": "All Time",
+    "image": "./Images/Larry O'Brien Trophy.jpg"
   },
   {
     "question": "Which NBA team has the most championships?",
@@ -127,7 +136,8 @@
     ],
     "additional info": "The Boston Celtics have won 18 championships.",
     "difficulty": "Medium",
-    "era": "All Time"
+    "era": "All Time",
+    "image": "./Images/Boston Celtics 18 Banner.jpg"
   },
   {
     "question": "Who was the youngest player to score 30,000 points in his career?",
@@ -140,7 +150,8 @@
     ],
     "additional info": "LeBron James became the youngest player to score 30,000 points in 2018.",
     "difficulty": "Hard",
-    "era": "All Time"
+    "era": "All Time",
+    "image": "./Images/Young Lebron James.jpg"
   },
   {
     "question": "Which player has the most career assists in NBA history?",
@@ -153,7 +164,8 @@
     ],
     "additional info": "John Stockton holds the record with 15,806 career assists.",
     "difficulty": "Medium",
-    "era": "All Time"
+    "era": "All Time",
+    "image": "./Images/John Stockton.jpg"
   },
   {
     "question": "Who is the only player to average a triple-double for an entire season, and how many times has he done it?",
@@ -166,7 +178,8 @@
     ],
     "additional info": "Russell Westbrook averaged a triple-double four times in his career.",
     "difficulty": "Medium",
-    "era": "All Time"
+    "era": "All Time",
+    "image": "./Images/Russell Westbrook.jpg"
   },
   {
     "question": "Who was the first non-American player to be named NBA MVP?",
@@ -179,7 +192,8 @@
     ],
     "additional info": "Hakeem Olajuwon, from Nigeria, won the MVP award in 1994.",
     "difficulty": "Hard",
-    "era": "All Time"
+    "era": "All Time",
+    "image": "./Images/Hakeem Olajuwon.jpg"
   },
   {
     "question": "Which player holds the record for most points scored in a single playoff game?",
@@ -192,7 +206,8 @@
     ],
     "additional info": "Michael Jordan scored 63 points against the Boston Celtics on April 20, 1986.",
     "difficulty": "Medium",
-    "era": "All Time"
+    "era": "All Time",
+    "image": "Images/Michael Jordan 63 points.jpg"
   },
   {
     "question": "What year was the NBA founded?",
@@ -205,7 +220,8 @@
     ],
     "additional info": "The NBA was founded on June 6, 1946, as the Basketball Association of America (BAA).",
     "difficulty": "Hard",
-    "era": "All Time"
+    "era": "All Time",
+    "image": "./Images/NBA Founding.jpg"
   },
   {
     "question": "Who was the first player in NBA history to be unanimously voted MVP?",
@@ -218,7 +234,8 @@
     ],
     "additional info": "Stephen Curry was unanimously voted MVP in the 2015-2016 season.",
     "difficulty": "Medium",
-    "era": "All Time"
+    "era": "All Time",
+    "image": "./Images/Steph Curry Unanimous MVP.jpg"
   },
   {
     "question": "Which NBA coach has the most career wins?",
@@ -231,6 +248,7 @@
     ],
     "additional info": "Gregg Popovich has over 1,388 career wins as an NBA coach.",
     "difficulty": "Hard",
-    "era": "All Time"
+    "era": "All Time",
+    "image": "./Images/Gregg Popovich Career Wins.jpg"
   }
 ]
