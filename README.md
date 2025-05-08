@@ -18,5 +18,8 @@ This project is an interactive trivia game focused on NBA history, players, and 
 
 ## Future Enhancements
 - Add more questions and categories.
+- Easy mode for casual players
+- medium mode for basketball fans
+- Hard mode for knowledgeable basketball fans
 - Save leaderboards to compare against others who take quizzes
-
+-
