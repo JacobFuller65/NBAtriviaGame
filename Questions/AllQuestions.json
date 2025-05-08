@@ -11,7 +11,7 @@
     "additional info": "Shai Gilgeous-Alexander is currently leading the league in points per game.",
     "difficulty": "Medium",
     "era": "Modern",
-    "image": "Images/Shai Gilgeous-Alexander.jpg"
+    "image": "Images/Shai_Gilgeous-Alexander.jpg"
   },
   {
     "question": "Who is the current leader in REB per game?",
@@ -25,7 +25,7 @@
     "additional info": "Domantas Sabonis is currently leading the league in rebounds per game.",
     "difficulty": "Medium",
     "era": "Modern",
-    "image": "Images/Domantas Sabonis.jpg"
+    "image": "Images/Domantas_Sabonis.jpg"
   },
   {
     "question": "Who is the current leader in AST per game?",
@@ -39,7 +39,7 @@
     "additional info": "Trae Young is currently leading the league in assists per game.",
     "difficulty": "Medium",
     "era": "Modern",
-    "image": "Images/Trae Young.jpg"
+    "image": "Images/Trae_Young.jpg"
   },
   {
     "question": "Which NBA player has won the most MVP awards?",
@@ -53,7 +53,7 @@
     "additional info": "Kareem Abdul-Jabbar won 6 MVP awards during his career, the most in NBA history.",
     "difficulty": "Medium",
     "era": "All Time",
-    "image": "./Images/Kareem Abdul-Jabbar.jpg"
+    "image": "Images/Kareem_Abdul-Jabbar.jpg"
   },
   {
     "question": "Who was the first player to be drafted straight out of high school?",
@@ -67,7 +67,7 @@
     "additional info": "Moses Malone was drafted in the 1974 ABA Draft.",
     "difficulty": "Hard",
     "era": "All Time",
-    "image": "./Images/Moses Malone.jpg"
+    "image": "Images/Moses_Malone.jpg"
   },
   {
     "question": "Which team holds the record for the most wins in a single regular season?",
