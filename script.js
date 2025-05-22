@@ -147,9 +147,10 @@ function showPopup(message, isCorrect) {
 
   // Get the additional info and image for the current question
   const additionalInfo = questions[currentQuestionIndex]?.["additional info"] || "No additional information available.";
-  const imageUrl = questions[currentQuestionIndex]?.image
-    ? `Images/${questions[currentQuestionIndex].image}` // Updated path to the image
-    : "";
+  const imageUrl = questions[currentQuestionIndex]?.image || "";
+
+  // Debug: Log the image URL
+  console.log("Image URL:", imageUrl);
 
   // Update the popup message to include the additional info and image
   popupMessage.innerHTML = `
@@ -157,12 +158,13 @@ function showPopup(message, isCorrect) {
     <p><strong>Did you know?</strong> ${additionalInfo}</p>
     ${imageUrl ? `<img src="${imageUrl}" alt="Correct Answer Image" style="max-width: 100%; height: auto; margin-top: 10px;">` : ""}
   `;
+
   popup.classList.remove("hidden");
+
   popupCloseBtn.onclick = () => {
     popup.classList.add("hidden");
     currentQuestionIndex++;
-    // Move to the next question
-    showQuestion();
+    showQuestion(); // Move to the next question
   };
 }
 // Function to start the timer
