@@ -311,6 +311,54 @@ button:hover, #pauseBtn:hover, #startOverBtn:hover, #startBtn:hover, #popup-clos
   border: 2px solid #ef3b24;
 }
 
+/* LA Lakers purple and gold theme */
+.lal-theme {
+  background: linear-gradient(135deg, #552583 0%, #FDB927 100%);
+  color: #fff;
+}
+
+.lal-theme .game-container {
+  border: 4px solid #FDB927; /* Gold border */
+  box-shadow: 0 0 24px #552583;
+  background: #301934; /* Deep purple for contrast */
+}
+
+.lal-theme #question,
+.lal-theme #score,
+.lal-theme #timer {
+  color: #fff;
+}
+
+.lal-theme #choices button {
+  background: #552583; /* Lakers purple */
+  color: #fff;
+  border: 2px solid #FDB927; /* Gold border */
+}
+
+.lal-theme #choices button:hover {
+  background: #FDB927; /* Gold on hover */
+  color: #552583;      /* Purple text on gold */
+  border: 2px solid #552583;
+}
+
+.lal-theme #pauseBtn,
+.lal-theme #startOverBtn,
+.lal-theme #startBtn,
+.lal-theme #popup-close-btn {
+  background: #FDB927; /* Gold */
+  color: #552583;      /* Purple text */
+  border: 2px solid #552583;
+}
+
+.lal-theme #pauseBtn:hover,
+.lal-theme #startOverBtn:hover,
+.lal-theme #startBtn:hover,
+.lal-theme #popup-close-btn:hover {
+  background: #552583; /* Purple on hover */
+  color: #FDB927;      /* Gold text */
+  border: 2px solid #FDB927;
+}
+
 /* Responsive styles for tablets and smaller devices */
 @media (max-width: 768px) {
   .game-container {

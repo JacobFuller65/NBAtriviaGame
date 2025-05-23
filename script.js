@@ -15,6 +15,9 @@ async function loadQuestions() {
     if (team === "okc") {
       questionsFile = "Questions/okcQuestions.json";
     }
+    if (team === "lal") {
+      questionsFile = "Questions/lalQuestions.json";
+    }
 
     const response = await fetch(questionsFile);
     if (!response.ok) {
@@ -278,9 +281,11 @@ document.getElementById("playAgainBtn").addEventListener("click", () => {
 });
 document.getElementById("teamSelect").addEventListener("change", function() {
   const body = document.body;
+  body.classList.remove("okc-theme", "lal-theme"); // Remove other themes
   if (this.value === "okc") {
     body.classList.add("okc-theme");
-  } else {
-    body.classList.remove("okc-theme");
+  } else if (this.value === "lal") {
+    body.classList.add("lal-theme");
   }
+  // Add more teams as needed
 });
