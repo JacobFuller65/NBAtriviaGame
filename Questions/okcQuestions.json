@@ -1,0 +1,92 @@
+[
+  {
+    "question": "Who is OKC's leading scorrer?",
+    "answer": "Shai Gilgeous-Alexander",
+    "choices": [
+      "Choice 1",
+      "Choice 2",
+      "Choice 3",
+      "Choice 4"
+    ],
+    "additional info": "Shai scored 2484 total points this year, which was the most in the entire NBA. ",
+    "difficulty": "Medium",
+    "category": "OKC",
+    "era": "current",
+    "image": ""
+  },
+  {
+    "question": "Who led the Thunder in total rebounds for the 2024-2025 season?",
+    "answer": "Isaiah Hartenstein",
+    "choices": [
+      "Choice 1",
+      "Choice 2",
+      "Choice 3",
+      "Choice 4"
+    ],
+    "additional info": "Hartenstein finished with 611 rebounds, which was 18th in the league for the seaason.",
+    "difficulty": "Medium",
+    "category": "OKC",
+    "era": "current",
+    "image": ""
+  },
+  {
+    "question": "Who was the Thunder's assist leader for the 2024-2025 season ?",
+    "answer": "Shai Gilgeous-Alexander",
+    "choices": [
+      "Choice 1",
+      "Choice 2",
+      "Choice 3",
+      "Choice 4"
+    ],
+    "additional info": "Shai finished with 486 assists, which was 11th in the league for the regular season.",
+    "difficulty": "Medium",
+    "category": "OKC",
+    "era": "current",
+    "image": ""
+  },
+  {
+    "question": "Who led the thunder in steals in the 2024-2025 season?",
+    "answer": "Shai Gilgeous-Alexander",
+    "choices": [
+      "Choice 1",
+      "Choice 2",
+      "Choice 3",
+      "Choice 4"
+    ],
+    "additional info": "Shai had 131 steals, which was 2nd in the league on the season.",
+    "difficulty": "Medium",
+    "category": "OKC",
+    "era": "current",
+    "image": ""
+  },
+  {
+    "question": "Who committed the most fouls for the Thunder in the 2024-2025 season?",
+    "answer": "Lou Dort",
+    "choices": [
+      "Choice 1",
+      "Choice 2",
+      "Choice 3",
+      "Choice 4"
+    ],
+    "additional info": "Dort ended the season with 208 personal fouls, the 11th highest in the league.",
+    "difficulty": "Medium",
+    "category": "OKC",
+    "era": "current",
+    "image": ""
+  },
+  {
+    "question": "Who led the Thunder in Defensive Box Plus/Minus ?",
+    "answer": "Isaiah Hartenstein",
+    "choices": [
+      "Choice 1",
+      "Choice 2",
+      "Choice 3",
+      "Choice 4"
+    ],
+    "additional info": "Hartenstein led the Thunder with a 2.6 plus/minus. ",
+    "difficulty": "Medium",
+    "category": "OKC",
+    "era": "current",
+    "image": ""
+  }
+]
