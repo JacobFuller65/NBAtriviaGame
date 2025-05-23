@@ -10,15 +10,13 @@
   <body>
     <div class="game-container">
       <h1>🏀 NBA Trivia</h1>
-
       <div id="config">
-        <label>Difficulty:</label>
+        <!--label>Difficulty:</label>
         <select id="difficultySelect" title="Select Difficulty">
-          <option value="easy">Easy</option>
+          <1option value="easy">Easy</option>
           <option value="medium" selected>Medium</option>
           <option value="hard">Hard</option>
-        </select>
-
+        </select-->
         <label>Era:</label>
         <select id="eraSelect" title="Select Era">
           <option value="all">All</option>
@@ -32,7 +30,6 @@
           <option value="okc">Oklahoma City Thunder</option>
           <!-- Add more teams as needed -->
         </select>
-
         <label for="numQuestions">Number of Questions:</label>
         <input
           type="number"
@@ -42,10 +39,8 @@
           value="10"
           style="width: 60px; margin-left: 8px;"
         />
-
         <button id="startBtn">Start Game</button>
       </div>
-
       <div id="timer">Time Left: 15s</div>
       <div id="timer-container">
         <div id="timer-bar"></div>
@@ -68,7 +63,6 @@
         <button id="popup-close-btn">OK</button>
       </div>
     </div>
-
     <div id="summary" class="hidden">
       <h2>Game Over!</h2>
       <p id="final-score"></p>
@@ -76,9 +70,7 @@
       <ul id="leaderboard"></ul>
       <button id="playAgainBtn">Play Again</button>
     </div>
-
     <script src="script.js"></script>
-
     <script>
       // Add functionality to the Contact/Feedback button
       document.getElementById("contactBtn").addEventListener("click", () => {
