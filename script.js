@@ -23,6 +23,12 @@ async function loadQuestions() {
     allQuestions = await response.json(); // Load all questions
     filterQuestions(); // Filter questions based on difficulty and era
     shuffleQuestions(); // Shuffle the filtered questions
+
+    // Get the number of questions the user selected (default 10)
+    const numQuestions =
+      parseInt(document.getElementById("numQuestions").value, 10) || 10;
+    questions = questions.slice(0, numQuestions);
+
     startQuiz();
   } catch (error) {
     console.error("Error loading questions:", error);
