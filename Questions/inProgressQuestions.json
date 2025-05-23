@@ -1,4 +1,5 @@
-{
+[
+  {
     "question": "Which player has the most career steals in NBA history?",
     "answer": "John Stockton",
     "choices": [
@@ -390,3 +391,4 @@
     "era": "Modern",
     "image": "Add image here"
   }
+]
