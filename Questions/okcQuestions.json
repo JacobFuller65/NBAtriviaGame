@@ -88,5 +88,185 @@
     "category": "OKC",
     "era": "current",
     "image": ""
+  },
+  {
+    "question": "Who had the most Triple-Doubles for OKC in the 2024-2025 season?",
+    "answer": "Jaylin Williams",
+    "choices": [
+      "Jaylin Williams",
+      "Jalen Williams",
+      "Shai Gilgeous-Alexander",
+      "Chet Holmgren"
+    ],
+    "additional info": "Jaylin Williams finished the season with a team high 3 triple doubles.",
+    "difficulty": "Medium",
+    "category": "OKC",
+    "era": "current",
+    "image": ""
+  },
+  {
+    "question": "What was Oklahoma City's regular season record for the 2024-2025 season?",
+    "answer": "68-14",
+    "choices": [
+      "Choice 1",
+      "Choice 2",
+      "Choice 3",
+      "Choice 4"
+    ],
+    "additional info": "The Thunder finished with a league best, 68 wins this season.",
+    "difficulty": "Medium",
+    "category": "OKC",
+    "era": "current",
+    "image": ""
+  },
+  {
+    "question": "Who did Oklahoma City Draft in the first round of 2024?",
+    "answer": "Nikola Topic",
+    "choices": [
+      "Nikola Topic",
+      "Cason Wallace",
+      "Isaiah Joe",
+      "Jaylin Williams"
+    ],
+    "additional info": "The Thunder selected him with the #12 overall pick.",
+    "difficulty": "Medium",
+    "category": "OKC",
+    "era": "current",
+    "image": ""
+  },
+  {
+    "question": "What is the name of the arena the thunder play in?",
+    "answer": "Paycom Center",
+    "choices": [
+      "Chesepeake Energy Arena",
+      "Devon Arena",
+      "Chase Center",
+      "Paycom Center"
+    ],
+    "additional info": "Interesting fact or explanation about the answer.",
+    "difficulty": "Medium",
+    "category": "OKC",
+    "era": "current",
+    "image": ""
+  },
+  {
+    "question": "Who has played the most career games for the Thunder?",
+    "answer": "Nick Collison",
+    "choices": [
+      "Kevin Durant",
+      "Russell Westbrook",
+      "Nick Collison",
+      "Steven Adams"
+    ],
+    "additional info": "Nick Collison played 910 games for the Thunder",
+    "difficulty": "Medium",
+    "category": "OKC",
+    "era": "All Time",
+    "image": ""
+  },
+  {
+    "question": "Who has the most missed field goals in Thunder history?",
+    "answer": "Russell Westbrook",
+    "choices": [
+      "Choice 1",
+      "Choice 2",
+      "Choice 3",
+      "Choice 4"
+    ],
+    "additional info": "Westbrook earned the nickname Russell Westbrick on the way to missing 8,627 shots while he played for OKC.",
+    "difficulty": "Medium",
+    "category": "OKC",
+    "era": "All Time",
+    "image": ""
+  },
+  {
+    "question": "Your question here?",
+    "answer": "Correct Answer",
+    "choices": [
+      "Choice 1",
+      "Choice 2",
+      "Choice 3",
+      "Choice 4"
+    ],
+    "additional info": "Interesting fact or explanation about the answer.",
+    "difficulty": "Medium",
+    "category": "OKC",
+    "era": "All Time",
+    "image": ""
+  },
+  {
+    "question": "Who grabbed the most defensive rebounds in OKC history?",
+    "answer": "Russell Westbrook",
+    "choices": [
+      "Nick Collison",
+      "Steven Adams",
+      "Russell Westbrook",
+      "Serge Ibaka"
+    ],
+    "additional info": "Interesting fact or explanation about the answer.",
+    "difficulty": "Medium",
+    "category": "OKC",
+    "era": "All Time",
+    "image": ""
+  },
+  {
+    "question": "Who has the most assists in Thunder history?",
+    "answer": "Russell Westbrook",
+    "choices": [
+      "Kevin Durant",
+      "Shai Gilgeous-Alexander",
+      "James Harden",
+      "Russell Westbrook"
+    ],
+    "additional info": "Interesting fact or explanation about the answer.",
+    "difficulty": "Medium",
+    "category": "OKC",
+    "era": "All Time",
+    "image": ""
+  },
+  {
+    "question": "Who has blocked the most shots in Thunder history?",
+    "answer": "Serge Ibaka",
+    "choices": [
+      "Serge Ibaka",
+      "Nick Collison",
+      "Chet Holmgren",
+      "Steven Adams"
+    ],
+    "additional info": "Interesting fact or explanation about the answer.",
+    "difficulty": "Medium",
+    "category": "OKC",
+    "era": "All Time",
+    "image": ""
+  },
+  {
+    "question": "Who has the most triple doubles in team history?",
+    "answer": "Russell Westbrook",
+    "choices": [
+      "Russell Westbrook",
+      "Shai Gilgeous-Alexander",
+      "Kevin Durant",
+      "James Harden"
+    ],
+    "additional info": "Russ had 138 Triple-Doubles in his time in OKC, also earning himself the nickname Mr. Triple Double.",
+    "difficulty": "Medium",
+    "category": "OKC",
+    "era": "All Time",
+    "image": ""
+  },
+  {
+    "question": "Who is OKC's all time leader in 2-pt %?",
+    "answer": "Andre Roberson",
+    "choices": [
+      "Andre Roberson",
+      "Steven Adams",
+      "Serge Ibaka",
+      "Nick Collison"
+    ],
+    "additional info": "Andre Roberson shot 60.4% from 2-pt range in his time with the Thunder.",
+    "difficulty": "Medium",
+    "category": "OKC",
+    "era": "All Time",
+    "image": ""
   }
 ]
