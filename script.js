@@ -123,15 +123,20 @@ function showQuestion() {
     endQuiz();
     return;
   }
-  // Show the current question and choices
   const questionData = questions[currentQuestionIndex];
   const questionElement = document.getElementById("question");
   const choicesElement = document.getElementById("choices");
   questionElement.textContent = questionData.question;
   choicesElement.innerHTML = "";
 
-  // Create buttons for each choice
-  questionData.choices.forEach((choice) => {
+  // Shuffle choices before displaying
+  const shuffledChoices = [...questionData.choices];
+  for (let i = shuffledChoices.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledChoices[i], shuffledChoices[j]] = [shuffledChoices[j], shuffledChoices[i]];
+  }
+
+  shuffledChoices.forEach((choice) => {
     const button = document.createElement("button");
     button.textContent = choice;
     button.classList.add("choice-btn");
@@ -139,7 +144,6 @@ function showQuestion() {
     choicesElement.appendChild(button);
   });
 
-  // Show the timer and start it
   startTimer();
 }
 // Function to check the selected answer and show if it's correct or wrong

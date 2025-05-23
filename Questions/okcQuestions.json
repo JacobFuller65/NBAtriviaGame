@@ -3,10 +3,10 @@
     "question": "Who is OKC's leading scorrer?",
     "answer": "Shai Gilgeous-Alexander",
     "choices": [
-      "Choice 1",
-      "Choice 2",
-      "Choice 3",
-      "Choice 4"
+      "Shai Gilgeous-Alexander",
+      "Jalen Williams",
+      "Alex Caruso",
+      "Chet Holmgren"
     ],
     "additional info": "Shai scored 2484 total points this year, which was the most in the entire NBA. ",
     "difficulty": "Medium",
@@ -18,10 +18,10 @@
     "question": "Who led the Thunder in total rebounds for the 2024-2025 season?",
     "answer": "Isaiah Hartenstein",
     "choices": [
-      "Choice 1",
-      "Choice 2",
-      "Choice 3",
-      "Choice 4"
+      "Isaiah Hartenstein",
+      "Chet Holmgren",
+      "Jaylin Williams",
+      "Shai Gilgeous-Alexander"
     ],
     "additional info": "Hartenstein finished with 611 rebounds, which was 18th in the league for the seaason.",
     "difficulty": "Medium",
@@ -33,10 +33,10 @@
     "question": "Who was the Thunder's assist leader for the 2024-2025 season ?",
     "answer": "Shai Gilgeous-Alexander",
     "choices": [
-      "Choice 1",
-      "Choice 2",
-      "Choice 3",
-      "Choice 4"
+      "Shai Gilgeous-Alexander",
+      "Alex Caruso",
+      "Isaiah Joe",
+      "Jalen Williams"
     ],
     "additional info": "Shai finished with 486 assists, which was 11th in the league for the regular season.",
     "difficulty": "Medium",
@@ -48,10 +48,10 @@
     "question": "Who led the thunder in steals in the 2024-2025 season?",
     "answer": "Shai Gilgeous-Alexander",
     "choices": [
-      "Choice 1",
-      "Choice 2",
-      "Choice 3",
-      "Choice 4"
+      "Alex Caruso",
+      "Shai Gilgeous-Alexander",
+      "Jalen Williams",
+      "Lou Dort"
     ],
     "additional info": "Shai had 131 steals, which was 2nd in the league on the season.",
     "difficulty": "Medium",
@@ -63,10 +63,10 @@
     "question": "Who committed the most fouls for the Thunder in the 2024-2025 season?",
     "answer": "Lou Dort",
     "choices": [
-      "Choice 1",
-      "Choice 2",
-      "Choice 3",
-      "Choice 4"
+      "Shai Gilgeous-Alexander",
+        "Lou Dort",
+        "Isaiah Hartenstein",
+        "Jalen Williams"
     ],
     "additional info": "Dort ended the season with 208 personal fouls, the 11th highest in the league.",
     "difficulty": "Medium",
@@ -78,10 +78,10 @@
     "question": "Who led the Thunder in Defensive Box Plus/Minus ?",
     "answer": "Isaiah Hartenstein",
     "choices": [
-      "Choice 1",
-      "Choice 2",
-      "Choice 3",
-      "Choice 4"
+      "Isaiah Hartenstein",
+      "Shai Gilgeous-Alexander",
+        "Chet Holmgren",
+        "Jaylin Williams"
     ],
     "additional info": "Hartenstein led the Thunder with a 2.6 plus/minus. ",
     "difficulty": "Medium",
@@ -108,10 +108,10 @@
     "question": "What was Oklahoma City's regular season record for the 2024-2025 season?",
     "answer": "68-14",
     "choices": [
-      "Choice 1",
-      "Choice 2",
-      "Choice 3",
-      "Choice 4"
+      "68-14",
+      "60-22",
+      "55-27",
+    "50-32"
     ],
     "additional info": "The Thunder finished with a league best, 68 wins this season.",
     "difficulty": "Medium",
@@ -168,27 +168,12 @@
     "question": "Who has the most missed field goals in Thunder history?",
     "answer": "Russell Westbrook",
     "choices": [
-      "Choice 1",
-      "Choice 2",
-      "Choice 3",
-      "Choice 4"
+      "Russell Westbrook",
+      "Kevin Durant",
+      "James Harden",
+      "Serge Ibaka"
     ],
     "additional info": "Westbrook earned the nickname Russell Westbrick on the way to missing 8,627 shots while he played for OKC.",
-    "difficulty": "Medium",
-    "category": "OKC",
-    "era": "All Time",
-    "image": ""
-  },
-  {
-    "question": "Your question here?",
-    "answer": "Correct Answer",
-    "choices": [
-      "Choice 1",
-      "Choice 2",
-      "Choice 3",
-      "Choice 4"
-    ],
-    "additional info": "Interesting fact or explanation about the answer.",
     "difficulty": "Medium",
     "category": "OKC",
     "era": "All Time",
