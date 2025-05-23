@@ -3,18 +3,30 @@
     "question": "Question?",
     "answer": "Answer",
     "choices": [
-      "Shai Gilgeous-Alexander",
-      "Jalen Williams",
-      "Alex Caruso",
-      "Chet Holmgren"
+      "Choice 1",
+      "Choice 2",
+        "Choice 3",
+        "Choice 4"
     ],
-    "additional info": "Shai scored 2484 total points this year, which was the most in the entire NBA. ",
+    "additional info": "Additional Info",
     "difficulty": "Medium",
     "category": "LAL",
     "era": "current",
     "image": ""
   },
   {
-
+    "question": "Question?",
+    "answer": "Answer",
+    "choices": [
+      "Choice 1",
+      "Choice 2",
+        "Choice 3",
+        "Choice 4"
+    ],
+    "additional info": "Additional Info",
+    "difficulty": "Medium",
+    "category": "LAL",
+    "era": "current",
+    "image": ""
   }
 ]
