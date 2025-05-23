@@ -231,6 +231,54 @@ button:hover {
   background-color: #145a86;
 }
 
+/* OKC Thunder blue and orange theme */
+.okc-theme {
+  background: linear-gradient(135deg, #007ac1 0%, #ef3b24 100%);
+  color: #fff;
+}
+
+.okc-theme .game-container {
+  border: 4px solid #ef3b24;
+  box-shadow: 0 0 24px #007ac1;
+  background: #003366; /* Deep blue for contrast */
+}
+
+.okc-theme #question,
+.okc-theme #score,
+.okc-theme #timer {
+  color: #fff;
+}
+
+.okc-theme #choices button {
+  background: #007ac1;
+  color: #fff;
+  border: 2px solid #ef3b24;
+}
+
+.okc-theme #choices button:hover {
+  background: #ef3b24;
+  color: #fff;
+  border: 2px solid #007ac1;
+}
+
+.okc-theme #pauseBtn,
+.okc-theme #startOverBtn,
+.okc-theme #startBtn,
+.okc-theme #popup-close-btn {
+  background: #ef3b24;
+  color: #fff;
+  border: 2px solid #007ac1;
+}
+
+.okc-theme #pauseBtn:hover,
+.okc-theme #startOverBtn:hover,
+.okc-theme #startBtn:hover,
+.okc-theme #popup-close-btn:hover {
+  background: #007ac1;
+  color: #fff;
+  border: 2px solid #ef3b24;
+}
+
 /* Responsive styles for tablets and smaller devices */
 @media (max-width: 768px) {
   .game-container {

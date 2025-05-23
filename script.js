@@ -7,7 +7,16 @@ let isPaused = false;
 // Function to load questions from the JSON file
 async function loadQuestions() {
   try {
-    const response = await fetch("Questions/AllQuestions.json"); // Updated path to the JSON file
+    // Get the selected team
+    const team = document.getElementById("teamSelect").value.toLowerCase();
+
+    // Decide which file to load
+    let questionsFile = "Questions/AllQuestions.json";
+    if (team === "okc") {
+      questionsFile = "Questions/okcQuestions.json";
+    }
+
+    const response = await fetch(questionsFile);
     if (!response.ok) {
       throw new Error(`Failed to fetch questions: ${response.statusText}`);
     }
@@ -256,4 +265,12 @@ document.getElementById("playAgainBtn").addEventListener("click", () => {
   document.getElementById("timer").classList.remove("hidden");
   document.getElementById("timer-container").classList.remove("hidden");
   startOverQuiz();
+});
+document.getElementById("teamSelect").addEventListener("change", function() {
+  const body = document.body;
+  if (this.value === "okc") {
+    body.classList.add("okc-theme");
+  } else {
+    body.classList.remove("okc-theme");
+  }
 });
