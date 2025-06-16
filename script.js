@@ -18,12 +18,12 @@ async function loadQuestions() {
     if (team === "lal") {
       questionsFile = "Questions/lalQuestions.json";
     }
-
+    console.log("Fetching questions from:", questionsFile);
     const response = await fetch(questionsFile);
     if (!response.ok) {
       throw new Error(`Failed to fetch questions: ${response.statusText}`);
     }
-    allQuestions = await response.json(); // Load all questions
+    //allQuestions = await response.json(); // Load all questions
     filterQuestions(); // Filter questions based on difficulty and era
     shuffleQuestions(); // Shuffle the filtered questions
 
@@ -34,10 +34,12 @@ async function loadQuestions() {
 
     startQuiz();
   } catch (error) {
-    console.error("Error loading questions:", error);
-    alert("Failed to load questions. Please check your file structure.");
+    alert("Error loading questions: " + error.message);
+    document.getElementById("config").classList.remove("hidden"); // Show config again
+    document.getElementById("controls").classList.add("hidden"); // Hide controls
   }
 }
+
 // Function to filter questions based on selected difficulty and era
 function filterQuestions() {
   const difficulty = document
