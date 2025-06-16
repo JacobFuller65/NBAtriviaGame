@@ -14,8 +14,11 @@ async function loadQuestions() {
     let questionsFile = "Questions/AllQuestions.json";
     if (team === "okc") {
       questionsFile = "Questions/okcQuestions.json";
+    } 
+    if (team === "2k25") {
+      questionsFile = "Questions/2k25Questions.json";
     }
-    if (team === "lal") {
+    else if (team === "lal") {
       questionsFile = "Questions/lalQuestions.json";
     }
     console.log("Fetching questions from:", questionsFile);
@@ -23,11 +26,10 @@ async function loadQuestions() {
     if (!response.ok) {
       throw new Error(`Failed to fetch questions: ${response.statusText}`);
     }
-    //allQuestions = await response.json(); // Load all questions
-    filterQuestions(); // Filter questions based on difficulty and era
+    allQuestions = await response.json();
+    questions = [...allQuestions]; // <-- Add this line
     shuffleQuestions(); // Shuffle the filtered questions
 
-    // Get the number of questions the user selected (default 10)
     const numQuestions =
       parseInt(document.getElementById("numQuestions").value, 10) || 10;
     questions = questions.slice(0, numQuestions);
@@ -40,39 +42,6 @@ async function loadQuestions() {
   }
 }
 
-// Function to filter questions based on selected difficulty and era
-function filterQuestions() {
-  const difficulty = document
-    .getElementById("difficultySelect")
-    .value.toLowerCase(); // Get selected difficulty
-  const era = document.getElementById("eraSelect").value.toLowerCase(); // Get selected era
-
-  console.log("Selected Difficulty:", difficulty);
-  console.log("Selected Era:", era);
-
-  // Filter questions based on difficulty and era
-  questions = allQuestions.filter((question) => {
-    const matchesDifficulty =
-      difficulty === "all" || question.difficulty.toLowerCase() === difficulty;
-    const matchesEra =
-      era === "all" || question.era.toLowerCase() === era;
-
-    // Include all questions if both filters are set to "all"
-    return matchesDifficulty && matchesEra;
-  });
-
-  // Debug: Log the filtered questions
-  console.log("Filtered Questions:", questions);
-
-  // Check if any questions match the criteria
-  if (questions.length === 0) {
-    alert(
-      "No questions match the selected criteria. Please adjust your settings."
-    );
-    document.getElementById("config").classList.remove("hidden"); // Show config again
-    document.getElementById("controls").classList.add("hidden"); // Hide controls
-  }
-}
 
 // Function to shuffle the questions array
 function shuffleQuestions() {
@@ -94,7 +63,8 @@ function startQuiz() {
   document.getElementById("controls").classList.remove("hidden"); // Show controls
   score = 0;
   currentQuestionIndex = 0;
-  document.getElementById("score").textContent = `Score: ${score}`;
+  document.getElementById("score").textContent = `Score: 0 / 0`;
+  updateQuestionsRemaining();
   showQuestion();
 }
 
@@ -153,15 +123,16 @@ function showQuestion() {
 }
 // Function to check the selected answer and show if it's correct or wrong
 function checkAnswer(selectedChoice) {
-  const correctAnswer = questions[currentQuestionIndex]?.answer; // Ensure "answer" matches the JSON key
-
+  const correctAnswer = questions[currentQuestionIndex]?.answer;
   if (selectedChoice === correctAnswer) {
     score++;
-    document.getElementById("score").textContent = `Score: ${score}`;
-    showPopup("Correct!", true);
-  } else {
-    showPopup(`Wrong! The correct answer was: ${correctAnswer}`, false);
   }
+  document.getElementById("score").textContent = `Score: ${score} / ${currentQuestionIndex + 1}`;
+  updateQuestionsRemaining();
+  showPopup(
+    selectedChoice === correctAnswer ? "Correct!" : `Wrong! The correct answer was: ${correctAnswer}`,
+    selectedChoice === correctAnswer
+  );
 }
 
 function showPopup(message, isCorrect) {
@@ -265,29 +236,33 @@ function updateLeaderboard(score, totalQuestions) {
     leaderboardElement.appendChild(listItem);
   });
 }
+
+function updateQuestionsRemaining() {
+  const remaining = questions.length - currentQuestionIndex;
+  document.getElementById("questions-remaining").textContent =
+    `Questions Remaining: ${remaining}`;
+}
 // Event listeners for buttons
-document.getElementById("startBtn").addEventListener("click", loadQuestions);
-document.getElementById("pauseBtn").addEventListener("click", pauseQuiz);
-document
-  .getElementById("startOverBtn")
-  .addEventListener("click", startOverQuiz);
-document.getElementById("playAgainBtn").addEventListener("click", () => {
-  // Reset the game and start over
-  document.getElementById("summary").classList.add("hidden"); // Hide summary
-  document.getElementById("config").classList.remove("hidden"); // Show config
-  document.getElementById("question").classList.remove("hidden");
-  document.getElementById("choices").classList.remove("hidden");
-  document.getElementById("timer").classList.remove("hidden");
-  document.getElementById("timer-container").classList.remove("hidden");
-  startOverQuiz();
-});
-document.getElementById("teamSelect").addEventListener("change", function() {
-  const body = document.body;
-  body.classList.remove("okc-theme", "lal-theme"); // Remove other themes
-  if (this.value === "okc") {
-    body.classList.add("okc-theme");
-  } else if (this.value === "lal") {
-    body.classList.add("lal-theme");
-  }
-  // Add more teams as needed
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("startBtn").addEventListener("click", loadQuestions);
+  document.getElementById("pauseBtn").addEventListener("click", pauseQuiz);
+  document.getElementById("startOverBtn").addEventListener("click", startOverQuiz);
+  document.getElementById("playAgainBtn").addEventListener("click", () => {
+    document.getElementById("summary").classList.add("hidden");
+    document.getElementById("config").classList.remove("hidden");
+    document.getElementById("question").classList.remove("hidden");
+    document.getElementById("choices").classList.remove("hidden");
+    document.getElementById("timer").classList.remove("hidden");
+    document.getElementById("timer-container").classList.remove("hidden");
+    startOverQuiz();
+  });
+  document.getElementById("teamSelect").addEventListener("change", function() {
+    const body = document.body;
+    body.classList.remove("okc-theme", "lal-theme");
+    if (this.value === "okc") {
+      body.classList.add("okc-theme");
+    } else if (this.value === "lal") {
+      body.classList.add("lal-theme");
+    }
+  });
 });

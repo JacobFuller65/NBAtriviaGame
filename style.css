@@ -359,6 +359,65 @@ button:hover, #pauseBtn:hover, #startOverBtn:hover, #startBtn:hover, #popup-clos
   border: 2px solid #FDB927;
 }
 
+/* Improve visibility for Choices.js dropdown */
+.choices__inner,
+.choices__list--dropdown,
+.choices__list--single,
+.choices__item {
+  font-size: 1.1rem !important;
+  font-weight: bold !important;
+  color: #222 !important;
+  background: #fff !important;
+}
+
+.choices__list--dropdown .choices__item--selectable {
+  color: #222 !important;
+  background: #fff !important;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted {
+  background: #f4511e !important; /* Basketball orange highlight */
+  color: #fff !important;
+}
+
+/* Make the Choices.js search box and dropdown narrower */
+.choices {
+  max-width: 275px !important; /* Adjust as needed */
+  width: 100% !important;
+  margin: 0 auto;
+}
+
+.choices__inner {
+  max-width: 275px !important;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+.choices__list--dropdown,
+.choices__list[aria-expanded] {
+  max-width: 275px !important;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Make the Choices.js search box and dropdown smaller */
+.choices__inner {
+  min-height: 32px !important;
+  font-size: 0.95rem !important;
+  padding: 4px 8px !important;
+}
+
+.choices__input {
+  min-height: 28px !important;
+  font-size: 0.95rem !important;
+  padding: 2px 6px !important;
+}
+
+.choices__list--dropdown,
+.choices__list[aria-expanded] {
+  font-size: 0.95rem !important;
+}
+
 /* Responsive styles for tablets and smaller devices */
 @media (max-width: 768px) {
   .game-container {
